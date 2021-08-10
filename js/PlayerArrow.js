@@ -21,13 +21,13 @@ class PlayerArrow {
         translate(pos.x, pos.y);
         rotate(playerArcher.angle);
         imageMode(CENTER);
-        image(this.image, 1, 1, this.width, this.height);
+        image(this.image, 0, 0, this.width, this.height);
         pop();
     }
 
     shoot() {
         var velocity = p5.Vector.fromAngle(playerArcher.angle);
-        velocity.mult(20);
+        velocity.mult(40);
         Matter.Body.setStatic(this.body, false);
 
         Matter.Body.setVelocity(this.body, { x: velocity.x, y: velocity.y })
